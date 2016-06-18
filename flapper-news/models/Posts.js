@@ -7,6 +7,12 @@ var PostSchema = new mongoose.Schema({  //this is how we want our post to look l
   comments: [{type: mongoose.Schema.Types.ObjectId, ref: 'Comment'}] //this way we can easily get all the comments for given post
 });
 
+
+PostSchema.methods.upvote = function(cb){
+  this.upvotes ++;
+  this.save(cb);
+};
+
 mongoose.model('Post', PostSchema);
 
 // make sure to register this model in app.js so it can be used with the database
