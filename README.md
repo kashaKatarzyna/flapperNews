@@ -1,5 +1,7 @@
 # flapperNews
 
+only the flapper-news folder is to be used, anything outside that folder is not needed, was created before setting up the backend
+
 To start server:
   *npm start
   *go to local host 3000
