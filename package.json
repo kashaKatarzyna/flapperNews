@@ -6,13 +6,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kashaKatarzyna/flapperNews.git"
+  },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kashaKatarzyna/flapperNews/issues"
+  },
+  "homepage": "https://github.com/kashaKatarzyna/flapperNews#readme",
   "dependencies": {
-    "angular": "^1.5.7",
-    "bootstrap": "^3.3.6",
-    "express": "^4.14.0",
-    "http-server": "^0.9.0",
-    "node": "0.0.0"
+    "http-server": "^0.9.0"
   }
 }

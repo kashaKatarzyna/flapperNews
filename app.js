@@ -1,4 +1,17 @@
-var app= angular.module('flapperNews', []);
+var app= angular.module('flapperNews', ['ui.router']);
+
+
+app.config(['$stateProvider', '$urlRouteProvider', function($stateProvider, $urlRouteProvider){
+
+  $stateProvider
+    .state('home',{  //setting our home route name
+      url: '/home',  //settig home url
+      templateUrl: '/home.html',  //telling it to use home template
+      controller: 'MainCtrl'  //telling angulr to controle this state with mainctrl
+    })
+
+  $urlRouteProvider.otherwise('home');  //if templ not available then set automaticaly to home
+}]);  //after this, set a home templ, we will do this in index.html
 
 
 // creating posts factory bc we will need it in our entire app, so its stored in one place and available everywhwre
@@ -33,15 +46,10 @@ app.controller('MainCtrl', ['$scope', 'posts', function($scope, posts){
     $scope.link = ' ';
   };
 
+
   $scope.incrementUpvotes= function(post){
     post.upvotes ++;
   };
-  
-
-
-
-
-
 
 
 }]);
@@ -53,3 +61,8 @@ app.controller('MainCtrl', ['$scope', 'posts', function($scope, posts){
 // data u put in a FACTORY will be available thruout the entire application naytime. its one copy
 
 // services like controllers are declared in app.js
+
+// routing for uploading templates when we go to different sites. use ui.router
+// its an externa module we use in out app so needs to be injected into our app.module. 
+// ui.router is more flexible and has more features then ng-route
+// after adding it, we need to configure it
