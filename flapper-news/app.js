@@ -4,6 +4,12 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
+
+require('./models/Posts');
+require('./models/Comments');
+
+mongoose.connect('mongodb://localhost//news');  //will open a connection with "news" database
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
